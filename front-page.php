@@ -208,12 +208,12 @@ get_header();
                 endwhile;
                 wp_reset_postdata();
             else :
-                // Demo destinations
+                // Demo destinations - Greece, Netherlands, Spain, Switzerland, France, Italy, Portugal
                 $demo_destinations = array(
-                    array('name' => 'Morocco', 'desc' => 'Exotic riads & desert retreats', 'img' => 'photo-1539020140153-e479b8c22e70'),
-                    array('name' => 'France', 'desc' => 'Châteaux & coastal villas', 'img' => 'photo-1502602898657-3e91760cbb34'),
-                    array('name' => 'Greece', 'desc' => 'Island paradises await', 'img' => 'photo-1533105079780-92b9be482077'),
-                    array('name' => 'Switzerland', 'desc' => 'Alpine luxury retreats', 'img' => 'photo-1531973576160-7125cd663d86'),
+                    array('name' => 'Greece', 'desc' => 'Stunning islands & ancient wonders', 'img' => 'photo-1533105079780-92b9be482077'),
+                    array('name' => 'France', 'desc' => 'Châteaux & Riviera villas', 'img' => 'photo-1502602898657-3e91760cbb34'),
+                    array('name' => 'Italy', 'desc' => 'Tuscan estates & coastal gems', 'img' => 'photo-1534445867742-43195f401b6c'),
+                    array('name' => 'Spain', 'desc' => 'Mediterranean paradise awaits', 'img' => 'photo-1543783207-ec64e4d95325'),
                 );
                 foreach ($demo_destinations as $dest) :
             ?>

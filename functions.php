@@ -537,5 +537,32 @@ function vacantionroyal_rewrite_flush() {
     vacantionroyal_register_post_types();
     vacantionroyal_register_taxonomies();
     flush_rewrite_rules();
+
+    // Create default destinations/locations
+    vacantionroyal_create_default_locations();
 }
 add_action('after_switch_theme', 'vacantionroyal_rewrite_flush');
+
+/**
+ * Create default location taxonomy terms
+ */
+function vacantionroyal_create_default_locations() {
+    $locations = array(
+        'Greece' => 'Stunning islands & ancient wonders',
+        'Netherlands' => 'Charming canals & countryside estates',
+        'Spain' => 'Mediterranean paradise & vibrant culture',
+        'Switzerland' => 'Alpine luxury & scenic retreats',
+        'France' => 'Châteaux & Riviera villas',
+        'Italy' => 'Tuscan estates & coastal gems',
+        'Portugal' => 'Atlantic coast & historic charm',
+    );
+
+    foreach ($locations as $name => $description) {
+        if (!term_exists($name, 'property_location')) {
+            wp_insert_term($name, 'property_location', array(
+                'description' => $description,
+                'slug' => sanitize_title($name),
+            ));
+        }
+    }
+}
